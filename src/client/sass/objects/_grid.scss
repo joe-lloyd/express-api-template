@@ -1,0 +1,247 @@
+// ========================================================
+
+// Grid
+//
+// The max is set in Settings.global and uses the `$maxCols` variable
+//
+// Markup:
+// <div class="grid--max-2">
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// </div>
+// <br>
+// <div class="grid--max-3">
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// </div>
+// <br>
+// <div class="grid--max-4">
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// </div>
+//
+// Styleguide 3-Objects.1-Grid
+
+// Grid collumns
+//
+// Markup:
+// <div class="grid">
+// 	<div class="col-1/3" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-2/3" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-1/4" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-2/4" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-1/4" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// </div>
+//
+// Styleguide 3-Objects.1-Grid.Grid collumns
+
+// ========================================================
+
+// Grid media query collumns
+//
+// Add the media query view at the end of the class to make media query specific styling. If you want to set a custom view class, make sure you escape the `@` with a `\`.
+//
+// Markup:
+// <div class="grid">
+// 	<div class="col-1/3 col-2/4@desktop" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-2/3 col-2/4@desktop" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-1/4 col-1/5@desktop" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-2/4 col-3/5@desktop" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	<div class="col-1/4 col-1/5@desktop" style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// </div>
+//
+// Styleguide 3-Objects.1-Grid.Grid media query collumns
+
+// ========================================================
+
+// Grid directional stretch
+//
+// Stretch out the grid to clear a gutter. Multiplier is set in Settings.global `$multiplyGutter`.
+// Stretch is set in a few ways:
+// * Horizontal: `grid--stretch--h-{number}x` (left and right)
+// * Vertical: `grid--stretch--v-{number}x` (top and bottom)
+// * Top: `grid--stretch--t-{number}x`
+// * Right: `grid--stretch--r-{number}x`
+// * Bottom: `grid--stretch--b-{number}x`
+// * Left: `grid--stretch--l-{number}x`
+//
+// Markup:
+// <div class="section__inner">
+// 	<div class="grid--max-2 grid--stretch-h-1x">
+// 		<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 		<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 		<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 		<div style="box-shadow: 0 0 0 1px #000; height: 100px;"></div>
+// 	</div>
+// </div>
+//
+// Styleguide 3-Objects.1-Grid.Grid directional stretch
+
+// ========================================================
+
+[class*='grid--'],
+.grid {
+	display: flex;
+	margin: 0;
+	flex-wrap: wrap;
+}
+
+[class*='grid'] > * {
+	margin: 0;
+}
+
+.grid--fill > * {
+	margin: 0;
+	width: 100%;
+}
+
+[class*='grid--max-'] > * {
+	max-width: 100%;
+	flex-basis: 100%;
+}
+
+.grid--max-4 > * {
+	max-width: 50%;
+	flex-basis: 50%;
+}
+
+// Vertical grid alignment
+.grid--valign-top {
+	align-items: flex-start;
+}
+
+.grid--valign-center {
+	align-items: center;
+}
+
+.grid--valign-bottom {
+	align-items: flex-end;
+}
+
+// Horizontal grid alignment
+.grid--halign-left {
+	justify-content: flex-start;
+}
+
+.grid--halign-center {
+	justify-content: center;
+}
+
+.grid--halign-bottom {
+	justify-content: flex-end;
+}
+
+// Column alignment
+.col--align-start {
+	align-self: flex-start;
+}
+
+.col--align-center {
+	align-self: center;
+}
+
+.col--align-bottom {
+	align-self: flex-end;
+}
+
+@for $i from 0 through $multiplyGutter {
+	.grid--stretch-#{$i}x {
+		margin: (-$gutter/2) * $i;
+	}
+
+	// stretch-h = horizontal negative margins
+	.grid--stretch-h-#{$i}x {
+		margin-left: (-$gutter/2) * $i;
+		margin-right: (-$gutter/2) * $i;
+	}
+
+	// stretch-v = vertical negative margins
+	.grid--stretch-v-#{$i}x {
+		margin-top: (-$gutter/2) * $i;
+		margin-bottom: (-$gutter/2) * $i;
+	}
+
+	// stretch-t = top negative margins
+	.grid--stretch-t-#{$i}x {
+		margin-top: (-$gutter/2) * $i;
+	}
+
+	// stretch-r = right negative margins
+	.grid--stretch-r-#{$i}x {
+		margin-right: (-$gutter/2) * $i;
+	}
+
+	// stretch-b = bottom negative margins
+	.grid--stretch-b-#{$i}x {
+		margin-bottom: (-$gutter/2) * $i;
+	}
+
+	// stretch-l = left negative margins
+	.grid--stretch-l-#{$i}x {
+		margin-left: (-$gutter/2) * $i;
+	}
+}
+
+@for $col from 2 through $maxCols {
+	@for $part from 1 through $maxCols {
+		.col-#{$part}\/#{$col} {
+			max-width: 100%;
+			flex-basis: 100%;
+		}
+	}
+}
+
+// ========================================================
+// TABLET PORTRAIT
+// ========================================================
+@media screen and (min-width: $view-tablet-portrait) {
+	.grid--max-2 > * {
+		max-width: 50%;
+		flex-basis: 50%;
+	}
+
+	.grid--max-3 > * {
+		max-width: 33.333%;
+		flex-basis: 33.333%;
+	}
+}
+
+// ========================================================
+// TABLET LANDSCAPE
+// ========================================================
+@media screen and (min-width: $view-tablet-landscape) {
+
+	.grid--max-4 > * {
+		max-width: 25%;
+		flex-basis: 25%;
+	}
+
+	@for $col from 2 through $maxCols {
+		@for $part from 1 through $maxCols {
+			.col-#{$part}\/#{$col} {
+				max-width: percentage($part / $col);
+				flex-basis: percentage($part / $col);
+			}
+		}
+	}
+}
+
+// ========================================================
+// DESKTOP
+// ========================================================
+@media screen and (min-width: $view-desktop) {
+	@for $col from 2 through $maxCols {
+		@for $part from 1 through $maxCols {
+			.col-#{$part}\/#{$col}\@desktop {
+				max-width: percentage($part / $col);
+				flex-basis: percentage($part / $col);
+			}
+		}
+	}
+}

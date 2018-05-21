@@ -1,0 +1,46 @@
+// ========================================================
+
+// Section
+//
+// Sections are used as an outer layer that is always full width of the screensize. This way you can give it a background color (or image) that fills out the whole section.
+//
+// Styleguide 3-Objects.0-Section
+
+// ========================================================
+
+// Section inner
+//
+// Gutters for objects are mainly set to half gutters all around. This way the gutters between objects will become one whole gutter. That leaves the issue that all around those objects there is just a half gutter. To fix this issue you can wrap those elements with a `section__inner` object. This object makes sure there is half a gutter all around, but also holds all the content in place at a max-width and centers if posible.
+//
+// Markup:
+// <section>
+// 	<div class="section__inner">
+// 		<div class="grid--max-2">
+// 			<div style="box-shadow: 0 0 0 1px #000;">
+// 				<div class="content-box--2x">
+// 					Lorem ipsum dolor sit amet, consectetur.
+// 				</div>
+// 			</div>
+// 			<div style="box-shadow: 0 0 0 1px #000;">
+// 				<div class="content-box--2x">
+// 					Lorem ipsum dolor sit amet, consectetur.
+// 				</div>
+// 			</div>
+// 		</div>
+// 	</div>
+// </section>
+//
+// Styleguide 3-Objects.0-Section.Section inner
+
+// ========================================================
+
+// .section { }
+
+.section__inner {
+	padding: $gutter;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 80rem;
+	position: relative;
+	text-align: center;
+}

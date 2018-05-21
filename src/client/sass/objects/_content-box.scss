@@ -1,0 +1,248 @@
+// ========================================================
+
+// Content box
+//
+// Content boxes are used for the content paddings throughout the whole project.
+//
+// Markup:
+// <div class="section__inner">
+// 	<div class="grid--max-4">
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// Styleguide 3-Objects.Content box
+
+// ========================================================
+
+// Content box directional spacing
+//
+// Directional spacing is set in a few ways:
+// * Horizontal: `content-box--h-{number}x` (left and right)
+// * Vertical: `content-box--v-{number}x` (top and bottom)
+// * Top: `content-box--t-{number}x`
+// * Right: `content-box--r-{number}x`
+// * Bottom: `content-box--b-{number}x`
+// * Left: `content-box--l-{number}x`
+//
+// Markup:
+// <div class="section__inner">
+// 	<div class="grid--max-4">
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box--2x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box--3x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box--4x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box--5x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--h-2x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--v-3x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--t-5x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--r-5x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--b-5x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box content-box--l-5x">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// Styleguide 3-Objects.Content box.Content box directional spacing
+
+// ========================================================
+
+// Content box media query
+//
+// Add the media query view at the end of the class to make media query specific styling. If you want to set a custom view class, make sure you escape the `@` with a `\`.
+//
+// Markup:
+// <div class="section__inner">
+// 	<div class="grid--max-2">
+// 		<div style="box-shadow: 0 0 0 1px #000;">
+// 			<div class="content-box--2x content-box--4x@desktop">
+// 				Lorem ipsum dolor sit amet, consectetur.
+// 			</div>
+// 		</div>
+// 	</div>
+// </div>
+//
+// Styleguide 3-Objects.Content box.Content box media query
+
+// ========================================================
+
+.content-box {
+	padding: $gutter/2;
+}
+
+@for $i from 0 through $multiplyGutter {
+	.content-box--#{$i}x {
+		padding: ($gutter/2) * $i;
+	}
+
+	// H = padding horizontal
+	.content-box--h-#{$i}x {
+		padding-left: ($gutter/2) * $i;
+		padding-right: ($gutter/2) * $i;
+	}
+
+	// V = padding vertical
+	.content-box--v-#{$i}x {
+		padding-top: ($gutter/2) * $i;
+		padding-bottom: ($gutter/2) * $i;
+	}
+
+	// T = padding top
+	.content-box--t-#{$i}x {
+		padding-top: ($gutter/2) * $i;
+	}
+
+	// R = padding right
+	.content-box--r-#{$i}x {
+		padding-right: ($gutter/2) * $i;
+	}
+
+	// B = padding bottom
+	.content-box--b-#{$i}x {
+		padding-bottom: ($gutter/2) * $i;
+	}
+
+	// L = padding bottom
+	.content-box--l-#{$i}x {
+		padding-left: ($gutter/2) * $i;
+	}
+}
+
+@media screen and (min-width: $view-desktop) {
+	.content-box {
+		padding: $gutter;
+	}
+
+	@for $i from 0 through $multiplyGutter {
+		.content-box--#{$i}x {
+			padding: ($gutter/2) * $i;
+		}
+
+		// H = padding horizontal
+		.content-box--h-#{$i}x {
+			padding-left: ($gutter/2) * $i;
+			padding-right: ($gutter/2) * $i;
+		}
+
+		// V = padding vertical
+		.content-box--v-#{$i}x {
+			padding-top: ($gutter/2) * $i;
+			padding-bottom: ($gutter/2) * $i;
+		}
+
+		// T = padding top
+		.content-box--t-#{$i}x {
+			padding-top: ($gutter/2) * $i;
+		}
+
+		// R = padding right
+		.content-box--r-#{$i}x {
+			padding-right: ($gutter/2) * $i;
+		}
+
+		// B = padding bottom
+		.content-box--b-#{$i}x {
+			padding-bottom: ($gutter/2) * $i;
+		}
+
+		// L = padding bottom
+		.content-box--l-#{$i}x {
+			padding-left: ($gutter/2) * $i;
+		}
+	}
+
+	@for $i from 0 through $multiplyGutter {
+		.content-box--#{$i}x\@desktop {
+			padding: ($gutter/2) * $i;
+		}
+
+		// H = padding horizontal
+		.content-box--h-#{$i}x\@desktop {
+			padding-left: ($gutter/2) * $i;
+			padding-right: ($gutter/2) * $i;
+		}
+
+		// V = padding vertical
+		.content-box--v-#{$i}x\@desktop {
+			padding-top: ($gutter/2) * $i;
+			padding-bottom: ($gutter/2) * $i;
+		}
+
+		// T = padding top
+		.content-box--t-#{$i}x\@desktop {
+			padding-top: ($gutter/2) * $i;
+		}
+
+		// R = padding right
+		.content-box--r-#{$i}x\@desktop {
+			padding-right: ($gutter/2) * $i;
+		}
+
+		// B = padding bottom
+		.content-box--b-#{$i}x\@desktop {
+			padding-bottom: ($gutter/2) * $i;
+		}
+
+		// L = padding bottom
+		.content-box--l-#{$i}x\@desktop {
+			padding-left: ($gutter/2) * $i;
+		}
+	}
+}

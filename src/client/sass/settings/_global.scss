@@ -1,0 +1,42 @@
+// ========================================================
+
+// Variables
+//
+// $text-size: 16 - Default text size
+// $gutter: 1.25rem - Default gutter size
+// $time-fast: 0.2s; - Default animation speed
+// $time: 0.4s; - Default animation speed
+// $time-slow: 0.6s; - Default animation speed
+// $multiplyGutter: 5 - Padding multiplier for content-box
+// $maxCols: 6 - Column devider for grid
+// $view-tablet-portrait: 30rem - Views for media queries
+// $view-tablet-landscape: 48rem - Views for media queries
+// $view-desktop: 60rem - Views for media queries
+//
+// Styleguide 0-Settings.Variable
+
+$text-size: 16;
+
+// Global margins
+$gutter: 1.25rem;
+
+// Styling presets
+$radius-border: 4px;
+
+// Animation
+$time-fast: 0.2s;
+$time: 0.4s;
+$time-slow: 0.6s;
+
+// padding for content-box
+$multiplyGutter: 5;
+
+// Column devider for grid
+$maxCols: 6;
+
+// Views for media queries
+$view-tablet-portrait: 30rem;
+$view-tablet-landscape: 48rem;
+$view-desktop: 60rem;
+
+// ========================================================

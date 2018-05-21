@@ -1,0 +1,60 @@
+// ========================================================
+
+// Helpers
+//
+// * `.list` Clears default list styling.
+// * `.accessibility` Hides an element, but keeps it readable for screenreaders.
+// * `.group` Clearfix.
+// * `.skip-to-main` Used to skip to main content when using the keyboard.
+//
+// Styleguide 1-Tools.Helpers
+
+// ========================================================
+
+.list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.accessibility {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	width: 1px;
+
+	&:focus,
+	&:active {
+		clip: auto;
+		height: auto;
+		overflow: visible;
+		position: fixed;
+		width: auto;
+	}
+}
+
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.skip-to-main {
+	left: -999px;
+	position: absolute;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	z-index: -9999;
+}
+
+.skip-to-main:focus,
+.skip-to-main:active {
+	color: #FFF;
+	background-color: #000;
+	left: 0;
+	top: 0;
+	overflow: auto;
+	z-index: 999;
+}

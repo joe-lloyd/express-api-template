@@ -1,0 +1,27 @@
+// ========================================================
+
+// Mixins
+//
+//
+//
+//
+//
+//
+// Styleguide 1-Tools.Mixins
+
+// ========================================================
+
+// globalPerc($text-size)
+//
+// Sets the global font-size on the body in percentages.
+//
+//
+//
+// $text-size - Number in pixels.
+//
+// Styleguide 1-Tools.Mixins.globalPerc
+
+@function globalPerc($text-size) {
+	$global: percentage((100 / 16) * $text-size) / 100;
+	@return $global;
+}

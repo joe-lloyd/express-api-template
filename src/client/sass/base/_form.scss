@@ -1,0 +1,264 @@
+// ========================================================
+
+// Form
+//
+// Your standard button suitable for clicking.
+//
+// Style guide: 2-Base.Form
+
+form {
+	margin-top: 0;
+}
+
+// ========================================================
+
+// Label
+//
+// Default label styling.
+//
+// Markup:
+// <label>Input label</label>
+// <input type="text" />
+//
+// Style guide: 2-Base.Form.Label
+
+label {
+	display: block;
+	font-weight: 700;
+	margin-bottom: $gutter/2;
+}
+
+// ========================================================
+
+// Text fields
+//
+// Default styling for all the form elements.
+//
+// Markup:
+// <fieldset>
+// 	<label>Text</label>
+// 	<input type="text" />
+// </fieldset>
+// <fieldset>
+// 	<label>Textarea</label>
+// 	<textarea></textarea>
+// </fieldset>
+// <fieldset>
+//
+// Style guide: 2-Base.Form.Text fields
+
+textarea,
+input,
+select {
+	color: $color-text;
+	padding: $gutter/2 $gutter/1.25;
+	border: 1px solid $color-border;
+	border-radius: $radius-border;
+	transition: color $time-fast ease-in-out;
+	line-height: 1.4;
+	background-color: #FFF;
+
+	&::-webkit-input-placeholder {
+		color: $color-text;
+		opacity: 0.8;
+	}
+
+	&:focus {
+		color: lighten($color-text, 25%);
+	}
+}
+
+input[type='range'] {
+	display: none;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	width: 100%;
+	height: 2px;
+	cursor: pointer;
+	animate: 0.2s;
+	background-color: $color-tertiary;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	height: 36px;
+	width: 16px;
+	background: #FFF;
+	cursor: pointer;
+	-webkit-appearance: none;
+	margin-top: -7.5px;
+}
+
+.no-js input[type='range'] {
+	display: block;
+	padding: 0;
+}
+
+// ========================================================
+
+// Select
+//
+// Default styling for the select element.
+//
+// Markup:
+// <label>Select</label>
+// <div class="select-box">
+// 	<select>
+// 		<option>Option</option>
+// 	</select>
+// </div>
+//
+// Style guide: 2-Base.Form.Select
+
+.select-box {
+	position: relative;
+
+	&:after {
+		content: '';
+		//background-image: url("../assets/images/icons/dropdown-down.svg");
+		background-size: contain;
+		width: 18px;
+		height: 18px;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: $gutter/1.25;
+		transition: color $time-fast ease-in-out;
+	}
+
+	&:focus:after {
+		color: lighten($color-text, 25%);
+	}
+}
+
+.select-box--booking {
+	background-color: $color-primary;
+	border: none;
+	border-radius: 32px;
+}
+
+.select-box select {
+	opacity: 0.8;
+	height: 100%;
+	padding-right: $gutter*2;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	z-index: 1;
+	position: relative;
+}
+
+.select-box--booking select {
+	border: none;
+}
+
+// ========================================================
+
+// Checkbox
+//
+// Default styling for the checkbox element.
+//
+// Markup:
+// <input type="checkbox" />
+// <label>Select</label>
+//
+// Style guide: 2-Base.Form.Checkbox
+
+input[type='checkbox'] {
+	position: fixed;
+	bottom: 100%;
+	right: 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+
+input[type="checkbox"] + label {
+	display: block;
+	position: relative;
+	font-weight: normal;
+	float: none;
+	vertical-align: middle;
+	margin: 0 0 $gutter/2 0;
+	padding: 0 0 0 $gutter*1.5;
+
+	&:before {
+		content: '';
+		border: 1px solid $color-border;
+		border-radius: $radius-border;
+		display: inline-block;
+		width: 1.4em;
+		height: 1.4em;
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		top: 0;
+		transition: background-color $time-fast ease-in-out, color $time-fast ease-in-out, border $time-fast ease-in-out;
+	}
+
+	&:after {
+		content: none;
+		position: absolute;
+		font-size: 12px;
+		left: 8px;
+		top: 4px;
+		transition: color $time-fast ease-in-out;
+	}
+}
+
+input[type="checkbox"]:checked + label {
+	color: #FFF;
+	background-color: $color-secondary;
+}
+
+// ========================================================
+
+// Radio
+//
+// Default styling for the radio element.
+//
+// Markup:
+// <input type="radio" />
+// <label>Select</label>
+//
+// Style guide: 2-Base.Form.Radio
+
+input[type='radio'] {
+	position: fixed;
+	bottom: 100%;
+	right: 100%;
+	opacity: 0;
+	visibility: hidden;
+}
+
+input[type='radio'] + label {
+	display: block;
+	float: none;
+	border-radius: 6px;
+	padding: $gutter/2 $gutter/1.25;
+	margin: $gutter/2;
+	position: relative;
+	border-radius: 2px;
+	transition: background-color $time-fast ease-in-out, color $time-fast ease-in-out;
+}
+
+input[type='radio']:checked + label {
+	color: #FFF;
+	background-color: $color-secondary;
+}
+
+// ERROR
+.error input,
+.error textarea {
+	border: 2px solid $color-error;
+}
+
+// ========================================================
+// DESKTOP
+// ========================================================
+// @media screen and (min-width: $view-desktop) {  }

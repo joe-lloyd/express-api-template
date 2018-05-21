@@ -1,0 +1,9 @@
+version: '2'
+services:
+
+  pm2:
+    volumes:
+      - ./:/var/www/${CONTAINER_NAME}
+    ports:
+      - "3000:3000"
+    command: [sh, -c, "yarn && yarn build && yarn server" ]

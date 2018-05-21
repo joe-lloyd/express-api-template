@@ -1,0 +1,276 @@
+// ========================================================
+
+html,
+button,
+datalist,
+input,
+select,
+textarea {
+	color: $color-text;
+}
+
+html {
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-height: 1.375;
+	box-sizing: border-box;
+}
+
+* {
+	box-sizing: border-box;
+
+	&:before,
+	&:after {
+		box-sizing: inherit;
+	}
+}
+
+body {
+	font-family: $font-primary;
+	font-size: globalPerc($text-size);
+	background-color: $color-primary;
+
+	&:after {
+		content: "0em";
+		display: block;
+		height: 0;
+		position: absolute;
+		overflow: hidden;
+		width: 0;
+	}
+}
+
+// ========================================================
+
+// Typography
+//
+// Default styling for all the typography of the website.
+//
+// Style guide: 2-Base.Typography
+
+// ========================================================
+
+// Headings
+//
+//
+// Markup:
+// <h1>h1</h1>
+// <h2>h2</h2>
+// <h3>h3</h3>
+// <h4>h4</h4>
+// <h5>h5</h5>
+//
+// Style guide: 2-Base.Typography.Headings
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: bold;
+	margin: 0 0 ($gutter/2) 0;
+}
+
+h1 {
+	font-size: 2em;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 1.5em;
+	line-height: 1.1;
+}
+
+h3 {
+	font-size: 1.2em;
+	line-height: 1.1;
+}
+
+h4 {
+	font-size: 1.15em;
+	line-height: 1.1;
+}
+
+h5 {
+	font-size: 1.1em;
+	line-height: 1.1;
+}
+
+h6 {
+	font-size: 1em;
+	line-height: 1.1;
+}
+
+// ========================================================
+
+// Paragraph
+//
+// Markup:
+// <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te id est laborum.</p>
+//
+// Style guide: 2-Base.Typography.Paragraph
+
+// ========================================================
+
+// Spacing
+//
+// Default spacing between block elements.
+//
+// Markup:
+// <h3>Heading</h3>
+// <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te id est laborum.</p>
+// <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te id est laborum.</p>
+// <ul>
+// 	<li>Lorem ipsum dolor sit amet.</li>
+// 	<li>Lorem ipsum dolor sit amet.</li>
+// 	<li>Lorem ipsum dolor sit amet.</li>
+// </ul>
+// <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod te id est laborum.</p>
+//
+// Style guide: 2-Base.Typography.Spacing
+
+h2 + p,
+h3 + p,
+h2 + ol,
+h3 + ol,
+h2 + ul,
+h3 + ul {
+	margin-top: 0;
+}
+
+p,
+ol,
+ul,
+blockquote,
+img,
+table,
+form,
+fieldset,
+pre,
+object,
+embed,
+video,
+audio,
+figure,
+figcaption,
+.paragraph {
+	margin-top: $gutter;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+p,
+ol,
+ul,
+blockquote,
+img,
+table,
+form,
+fieldset,
+pre,
+object,
+embed,
+video,
+audio,
+figure,
+figcaption,
+.paragraph {
+	margin-bottom: $gutter;
+}
+
+ol,
+ul {
+	padding-left: $gutter*2;
+}
+
+li {
+	margin-bottom: $gutter/2;
+	margin-top: $gutter/2;
+}
+
+datalist,
+input,
+select,
+textarea {
+	padding: $gutter/2 $gutter;
+	background-color: transparent;
+	color: inherit;
+
+	&:focus,
+	&:active {
+		color: inherit;
+	}
+}
+
+// ========================================================
+
+// Links and buttons
+//
+// Your standard button suitable for clicking.
+//
+// Style guide: 2-Base.Links and Buttons
+
+// ========================================================
+
+// Hyperlinks
+//
+//
+// Markup:
+// <a href="#">test</a>
+//
+// :hover - Highlights when hovering.
+// :focus - Focus state
+//
+// Style guide: 2-Base.Links and Buttons.Hyperlinks
+
+a {
+	text-decoration: underline;
+
+	&:focus,
+	&:hover,
+	&:active {
+		background-color: #000;
+		color: #FFF;
+		text-shadow: none;
+		text-decoration: none;
+	}
+}
+
+// ========================================================
+
+// Buttons
+//
+//
+// Markup:
+// <button type="button" class="btn">Click me</button>
+//
+// :hover - Highlights when hovering.
+// :focus - Focus state
+//
+// Style guide: 2-Base.Links and Buttons.Buttons
+
+button {
+	background-color: #000;
+	color: #FFF;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+
+	&:focus,
+	&:hover,
+	&:active {
+		background-color: #FFF;
+		color: #000;
+	}
+}
+
+// ========================================================

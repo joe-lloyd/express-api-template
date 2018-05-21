@@ -1,0 +1,61 @@
+{
+  "name": "express-api-template",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "server": "pm2-dev start ./dist/server.js",
+    "start-server": "pm2-docker start ./dist/server.js",
+    "start": "node ./node_modules/concurrently/src/main.js --kill-others \"yarn start:server\" \"yarn start:client\"",
+    "start:server": "node ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.server.babel.js --colors --watch --mode development",
+    "start:client": "node ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.client.babel.js --colors --watch --mode development",
+    "build": "node ./node_modules/concurrently/src/main.js \"yarn build:server\" \"yarn build:client\"",
+    "build:server": "node ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.server.babel.js --colors --mode production",
+    "build:client": "node ./node_modules/webpack/bin/webpack.js --config webpack/webpack.config.client.babel.js --colors --mode production"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/polyfill": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-stage-2": "^7.0.0-beta.47",
+    "@babel/register": "^7.0.0-beta.47",
+    "babel-loader": "^7.1.4",
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.5.1",
+    "cookie-parser": "^1.4.3",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "debug": "~2.6.9",
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-loader": "^2.0.0",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "file-loader": "^1.1.11",
+    "import-glob-loader": "^1.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.9.0",
+    "request-promise": "^4.2.2",
+    "sass-loader": "^7.0.1",
+    "serve-favicon": "~2.4.5",
+    "style-loader": "^0.21.0",
+    "stylelint": "^9.2.1",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      [
+        "@babel/preset-stage-2",
+        {
+          "decoratorsLegacy": true
+        }
+      ]
+    ]
+  }
+}
