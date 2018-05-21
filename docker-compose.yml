@@ -2,8 +2,8 @@ version: '2'
 services:
 
   pm2:
-    container_name: ${CONTAINER_NAME}
-    image: ${CONTAINER_NAME}/pm2
+    container_name: express-pm2
+    image: express-pm2/pm2
     build:
       context: .
       dockerfile: ./docker/pm2/Dockerfile

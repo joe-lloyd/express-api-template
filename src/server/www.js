@@ -2,10 +2,11 @@
  * Module dependencies.
  */
 
-const app = require('./server');
-const debug = require('debug')('pre-flight-node-server:server');
-const http = require('http');
+import app from './server';
+import debug0 from 'debug';
+import http from 'http';
 
+const debug = debug0('pre-flight-node-server:server');
 /**
  * Get port from environment and store in Express.
  */

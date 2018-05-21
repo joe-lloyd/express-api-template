@@ -3,7 +3,7 @@ services:
 
   pm2:
     volumes:
-      - ./:/var/www/${CONTAINER_NAME}
+      - ./:/var/www/express-pm2
     ports:
       - "3000:3000"
     command: [sh, -c, "yarn && yarn build && yarn server" ]

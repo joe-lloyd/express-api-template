@@ -1,7 +1,7 @@
 FROM node:wheezy
 
-RUN mkdir -p /var/www/${CONTAINER_NAME}
-WORKDIR /var/www/${CONTAINER_NAME}
+RUN mkdir -p /var/www/express-pm2
+WORKDIR /var/www/express-pm2
 
 COPY package.json .
 RUN yarn global add pm2
