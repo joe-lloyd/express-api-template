@@ -6,12 +6,12 @@ WORKDIR /var/www/${CONTAINER_NAME}
 COPY package.json .
 RUN yarn global add pm2
 
-RUN npm i
+RUN yarn
 
 COPY . .
 
 EXPOSE 3000
 
-RUN npm run build
+RUN yarn build
 
-CMD ["npm", "run", "start-server"]
+CMD ["yarn", "start-server"]
